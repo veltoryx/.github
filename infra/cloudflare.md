@@ -1,6 +1,6 @@
 # Cloudflare setup for veltoryxtech.com
 
-Last updated: 2026-10-10
+Last updated: 2026-10-10 (email routing added)
 
 ## Domain
 
@@ -31,8 +31,21 @@ Future products get their own subdomain the same way: `<product>.veltoryxtech.co
 | Type | Name | Content | Proxied | Purpose |
 |---|---|---|---|---|
 | AAAA | `www` | `100::` | Yes | Placeholder so Cloudflare can catch `www` traffic and redirect it. Do not remove. |
+| MX | `@` | `route1.mx.cloudflare.net` (17), `route2` (69), `route3` (58) | No | Email Routing: receive mail for the domain |
+| TXT | `@` | `v=spf1 include:_spf.mx.cloudflare.net ~all` | No | SPF |
+| TXT | `cf2024-1._domainkey` | Cloudflare DKIM public key | No | DKIM for forwarded mail |
+| TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:contact@veltoryxtech.com; adkim=r; aspf=r` | No | DMARC, monitoring mode |
 
-Records for the apex and `mediatlas` are added automatically when each Worker gets its custom domain. Email routing records (MX, SPF, DKIM, DMARC) will be added in #5.
+Records for the apex and `mediatlas` are added automatically when each Worker gets its custom domain. Don't remove the MX, SPF or DKIM records, or email stops working.
+
+## Email
+
+| Address | Goes to | Set up in |
+|---|---|---|
+| `contact@veltoryxtech.com` | Owner's personal inbox (forwarded) | Email → Email Routing → Routing rules |
+| Catch-all (any other address) | Dropped (disabled) | Same page; can forward later if aliases like `hello@` are needed |
+
+Cloudflare Email Routing only receives and forwards. Sending as `contact@veltoryxtech.com` needs an outgoing mail service; see #10. When that's set up, its SPF include and DKIM records go here, and DMARC can move from `p=none` to `p=quarantine`.
 
 ## Redirect rules
 
