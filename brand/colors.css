@@ -1,0 +1,14 @@
+/* Veltoryx Technologies brand colours. Sampled from the original logo artwork. */
+:root {
+  --vx-blue: #0069FB;        /* Primary. Buttons, links, the X. 4.76:1 on white. */
+  --vx-blue-hover: #0055D4;  /* Hover / pressed state for primary blue. */
+  --vx-sky: #00A3FD;         /* Accent. Gradients, highlights, links on dark backgrounds. */
+  --vx-graphite: #111418;    /* Main text on light backgrounds. */
+  --vx-slate: #5B6168;       /* Secondary text on light backgrounds. 6.26:1 on white. */
+  --vx-steel: #6E7378;       /* Logo left blade (light backgrounds). */
+  --vx-silver: #A2A5A8;      /* Logo left blade (dark backgrounds), muted text on dark. */
+  --vx-mist: #F4F6F8;        /* Light section backgrounds. */
+  --vx-border: #E3E6EA;      /* Borders and dividers on light backgrounds. */
+  --vx-white: #FFFFFF;
+  --vx-black: #05070A;       /* Dark section backgrounds. */
+}
