@@ -20,14 +20,12 @@
 
 ## What we do
 
-| | |
-|---|---|
-| 📘 **Learn** | Tutorials on Java, Spring Boot, DSA, microservices, system design and AWS |
-| 🛠️ **Tools** | Free developer utilities that run in your browser |
-| ✍️ **Blog** | Technical articles and deep dives |
-| 🤖 **AI** | AI-powered tools and applications |
-| 📦 **Products** | Independent apps, each on its own subdomain |
-| 🤝 **Services** | Software development and IT consulting |
+- 📘 **Learn**: tutorials on Java, Spring Boot, DSA, microservices, system design and AWS
+- 🛠️ **Tools**: free developer utilities that run in your browser
+- ✍️ **Blog**: technical articles and deep dives
+- 🤖 **AI**: AI-powered tools and applications
+- 📦 **Products**: independent apps, each on its own subdomain
+- 🤝 **Services**: software development and IT consulting
 
 ## Products
 
